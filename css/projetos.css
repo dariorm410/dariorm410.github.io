@@ -1,0 +1,157 @@
+.projetos {
+  background-color: #000;
+}
+
+.projeto-item {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide em 2 colunas */
+  align-items: normal;
+  padding: 40px 0px 100px 40px;
+}
+
+.projeto-midia {
+  width: 500px;
+  height: auto;
+}
+.projeto-card {
+  width: 350px;
+  height: auto;
+}
+
+/* --- PROJETO ÍMPAR (Ex: Plantnet) - Padrão: Imagem na Esq | Card na Dir --- */
+.projeto-item:nth-child(odd) .projeto-midia {
+  grid-row: 1;
+  grid-column: 1; /* Imagem na esquerda */
+  justify-self: center;
+  /* --- O ajuste para subir --- */
+  margin-top: -100px;
+  margin-right: 50px; /* Ajuste de posição horizontal da imagem */
+  position: relative;
+}
+
+.projeto-item:nth-child(odd) .projeto-card {
+  grid-row: 2;
+  grid-column: 2; /* Card vai para a direita */
+  justify-self: center; /* COLA na borda direita da tela */
+  margin-top: -120px;
+  margin-left: 50px; /* Ajuste de posição horizontal da imagem */
+}
+
+/* --- PROJETO PAR (Ex: Roleh) - Inverter: Card na Esq | Imagem na Dir --- */
+
+.projeto-item:nth-child(even) .projeto-midia {
+  grid-row: 1; /*midia continua na mesma linha*/
+  grid-column: 1; /*  Vai para a esquerda */
+  justify-self: center; /* COLA na borda direita da tela */
+  margin-top: -300px;
+  margin-left: -45px; /* Ajuste de posição horizontal da imagem */
+}
+
+.projeto-item:nth-child(even) .projeto-card {
+  grid-row: 2;
+  grid-column: 2; /* Card vai para a direita */
+  justify-self: center; /* Cola na borda esquerda */
+  margin-top: -120px;
+  margin-left: 80px; /* Ajuste de posição horizontal da imagem */
+}
+
+.projeto-cinfra {
+  margin-top: -150px;
+}
+
+.projeto-cinfra-card {
+  margin-top: -80px;
+}
+
+@media (max-width: 1000px) {
+  .projeto-midia {
+    width: 350px;
+    height: auto;
+  }
+  .projeto-card {
+    width: 250px;
+    height: auto;
+  }
+
+  .projeto-item:nth-child(odd) .projeto-midia {
+    /*IMPAR*/
+    grid-row: 1;
+    grid-column: 1; /* Imagem na esquerda */
+    justify-self: center;
+    /* --- O ajuste para subir --- */
+    margin-top: -60px;
+    margin-right: 0px; /* Ajuste de posição horizontal da imagem */
+  }
+  .projeto-item:nth-child(even) .projeto-midia {
+    /*PAR*/
+    grid-row: 1; /*midia continua na mesma linha*/
+    grid-column: 1; /*  Vai para a esquerda */
+    justify-self: center; /* COLA na borda direita da tela */
+    margin-top: -180px;
+    margin-left: 0px; /* Ajuste de posição horizontal da imagem */
+  }
+  .projeto-item:nth-child(odd) .projeto-card,
+  .projeto-item:nth-child(even) .projeto-card {
+    grid-row: 2;
+    grid-column: 2; /* Card vai para a direita */
+    justify-self: center; /* COLA na borda direita da tela */
+    margin-top: -180px;
+    margin-left: 0px; /* Ajuste de posição horizontal da imagem */
+  }
+  .projeto-cinfra {
+    margin-top: -100px;
+  }
+
+  .projeto-cinfra-card {
+    margin-top: -60px;
+  }
+}
+
+@media (max-width: 700px) {
+  .projeto-item {
+    grid-template-columns: 1fr; /* Uma única coluna */
+    padding: 50px 20px; /* Ajustei o padding para dar respiro nas duas laterais no celular */
+
+    /* --- A MÁGICA AQUI --- */
+    row-gap: 90px; /* Força exatamente 90px de distância estável entre a Imagem e o Card */
+  }
+
+  /* Reduzindo as caixas para telas pequenas não quebrarem */
+  .projeto-midia {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .projeto-card {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  /* --- RESET GERAL DE MARGENS PARA ITENS ÍMPARES E PARES --- */
+  /* No mobile, nenhum elemento precisa de margens malucas para subir ou descer */
+
+  .projeto-item:nth-child(odd) .projeto-midia,
+  .projeto-item:nth-child(even) .projeto-midia {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: center;
+    margin: 0; /* Reseta os -130px, -300px e os margin-bottoms antigos */
+  }
+
+  .projeto-item:nth-child(odd) .projeto-card,
+  .projeto-item:nth-child(even) .projeto-card {
+    grid-row: 2;
+    grid-column: 1;
+    justify-self: center;
+    margin: 0; /* Reseta todos os descolamentos manuais */
+  }
+
+  /* Reseta as exceções do Cinfra que deixariam o layout torto */
+  .projeto-cinfra,
+  .projeto-cinfra-card {
+    margin: 0;
+  }
+}

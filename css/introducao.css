@@ -1,0 +1,125 @@
+.introducao {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0px 120px 0px; /* CIMA || DIREITA || BAIXO || ESQUERDA */
+  /* Cria uma pilha vertical e centraliza os itens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0px; /* Espaço entre as linhas */
+}
+
+.conteudo-principal {
+  /* Coloca foto, linha e título lado a lado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Espaço entre a foto e o texto */
+  width: 100%;
+}
+
+.info-h1 {
+  font-family: "DOMAINE DISPLAY NARROW", serif;
+  font-size: 3.5rem; /* Ajuste conforme necessário */
+  line-height: 1.125;
+  text-align: left; /* Título alinhado à esquerda dentro da sua área */
+  max-width: 500px;
+}
+
+.detalhe-h1 {
+  font-family: "Playfair Display", serif;
+}
+
+.foto-nome {
+  height: auto;
+  width: 408px;
+}
+.separador {
+  height: 300px;
+}
+
+/* Estilos adicionais para as frases */
+.saudacao {
+  font-size: 1rem;
+  color: #b8b8b8;
+}
+.localizacao {
+  font-size: 1rem;
+  color: #7a7a7a;
+}
+
+@media (max-width: 1000px) {
+  /*até 1000px de largura o site vai respeitar os comandos abaixo*/
+  .introducao {
+    padding: 30px; /*distancia da intro pro menu */
+  }
+  .info-h1 {
+    font-size: 2.5rem;
+  }
+  .conteudo-principal {
+    gap: 10px; /*espaço entre foto + separador + h1*/
+  }
+  .foto-nome {
+    height: 140px;
+    width: 300px;
+  }
+  .separador {
+    height: 250px;
+  }
+
+  .saudacao,
+  .localizacao {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .info-h1 {
+    font-size: 1.8rem;
+  }
+  .conteudo-principal {
+    gap: 0px; /*espaço entre foto + separador + h1*/
+  }
+  .foto-nome {
+    height: 110px;
+    width: 250px;
+  }
+  .separador {
+    height: 150px;
+    width: 50px;
+  }
+  .saudacao,
+  .localizacao {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .conteudo-principal {
+    flex-direction: column;
+    align-items: center;
+    /*width: 100%;*/
+    gap: 20px;
+  }
+  .introducao {
+    gap: 10px;
+  }
+  .separador {
+    display: none;
+  }
+  .info-h1 br {
+    display: none; /*com isso ele permite remover a quebra de linha*/
+  }
+  .info-h1 {
+    max-width: 100%;
+    width: 100%;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .foto-nome {
+    max-width: 250px;
+    height: auto;
+  }
+}

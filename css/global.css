@@ -1,0 +1,67 @@
+body {
+  font-family: "Dm Sans", Arial, sans-serif;
+  margin: 0px;
+  color: #f5f5f5;
+  background-color: #000;
+  /* margin-bottom: 1000px; */
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0px;
+}
+
+.subtitulo {
+  font-family: "DOMAINE DISPLAY NARROW", serif;
+  font-weight: bold;
+  font-size: 7rem;
+  line-height: 1.2;
+  word-break: break-all;
+  max-width: 4ch; /* 'ch' seria o tamanho maximo por caracter  - aí ele é limitador a 4 caracteres*/
+}
+
+.subtitulo-ponto {
+  /* Definido o gradiente linear (do topo para a base) */
+  background-image: linear-gradient(to bottom, #ffbb00, #895e00);
+  /*-webkit-background-clip: text; /* Necessário para Chrome, Safari e Edge */
+  background-clip: text; /*para aplicar o gradiente apenas ao char*/
+  /* A cor original fica transparente para o fundo gradiente aparecer através dela */
+  color: transparent;
+  /*display: inline-block; /* Ajuste opcional para garantir que o gradiente renderize bem */
+  font-weight: bold; /* Pontos em gradiente aparecem melhor se forem mais "gordinhos" */
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .subtitulo {
+    font-size: 4rem;
+    text-transform: capitalize;
+    max-width: initial;
+  }
+}
+
+@media (max-width: 500px) {
+  .subtitulo {
+    font-size: 3.5rem !important; /* o  !important; obriga essa regra sobre qualquer outra*/
+    text-transform: lowercase;
+    max-width: initial;
+  }
+
+  /*O 'capitalize' ele não altera as outras letras se elas já forem maiúsculas no HTML.*/
+
+  .subtitulo::first-letter {
+    text-transform: capitalize;
+  }
+}
