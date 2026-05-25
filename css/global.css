@@ -1,3 +1,25 @@
+/* ==========================================================================
+   REGISTRO DAS FONTES LOCAIS 
+   ========================================================================== */
+
+/* Registro da versão REGULAR */
+@font-face {
+  font-family: "Domaine Display Narrow";
+  src: url("../fonts/DomaineDispNar-Regular.otf") format("opentype");
+  font-weight: normal; /* Define que este arquivo é o peso 400 (normal) */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Registro da versão BOLD */
+@font-face {
+  font-family: "Domaine Display Narrow";
+  src: url("../fonts/DomaineDispNar-Bold.otf") format("opentype");
+  font-weight: bold; /* Define que este arquivo é o peso 700 (bold) */
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   font-family: "Dm Sans", Arial, sans-serif;
   margin: 0px;
@@ -14,7 +36,7 @@ p {
 }
 
 .subtitulo {
-  font-family: "DOMAINE DISPLAY NARROW", serif;
+  font-family: "Domaine Display Narrow", Georgia, serif;
   font-weight: bold;
   font-size: 7rem;
   line-height: 1.2;
